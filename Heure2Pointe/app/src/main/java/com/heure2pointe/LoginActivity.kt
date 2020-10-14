@@ -38,6 +38,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun autoFillAndClick(idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
+
         //Auto-fill Text
         webview.loadUrl("javascript:(function() { document.getElementById('$idUsername').value = '$username'; ;})()")
         webview.loadUrl("javascript:(function() { document.getElementById('$idPassword').value = '$password'; ;})()")
@@ -45,6 +46,6 @@ class LoginActivity : AppCompatActivity() {
         //Auto click Button
         webview.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()")
 
-        println("AUTOFILL")
+        
     }
 }
