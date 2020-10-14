@@ -20,11 +20,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        webview.webViewClient = WebViewClient()
-        webview.settings.javaScriptEnabled = true
+        wv_Adel.webViewClient = WebViewClient()
+        wv_Adel.settings.javaScriptEnabled = true
 
-        webview.loadUrl(urlAdel)
-        webview.setWebViewClient(object : WebViewClient() {
+        wv_Adel.loadUrl(urlAdel)
+        wv_Adel.setWebViewClient(object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
                 view.loadUrl(url)
                 return true
@@ -40,10 +40,10 @@ class LoginActivity : AppCompatActivity() {
     fun autoFillAndClick(idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
 
         //Auto-fill Text
-        webview.loadUrl("javascript:(function() { document.getElementById('$idUsername').value = '$username'; ;})()")
-        webview.loadUrl("javascript:(function() { document.getElementById('$idPassword').value = '$password'; ;})()")
+        wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idUsername').value = '$username'; ;})()")
+        wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idPassword').value = '$password'; ;})()")
 
         //Auto click Button
-        webview.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()")
+        wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()")
     }
 }
