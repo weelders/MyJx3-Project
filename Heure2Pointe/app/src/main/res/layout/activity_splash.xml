@@ -10,18 +10,36 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/splash_title" />
+        android:layout_height="66dp"
+        android:gravity="center"
+        android:text="@string/splash_title"
+        android:textColor="#000000"
+        android:textColorHighlight="#8A8A8A"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="Pointe en seulement 2 clics pour ta formation !" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo_combin_" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:layout_width="384dp"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#C39BDC"
+        android:text="Commencer"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#EDEDED"
+        android:textColorHint="#5E5555" />
+
 </LinearLayout>
