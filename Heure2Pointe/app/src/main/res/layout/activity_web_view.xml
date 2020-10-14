@@ -8,40 +8,34 @@
     android:padding="12dp"
     tools:context=".WebViewActivity">
 
-    <EditText
-        android:id="@+id/et_url"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="entre ton URL" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/et_usernanme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="identifiant"
-            android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/et_url"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="entre ton URL" />
 
-        <EditText
-            android:id="@+id/et_password"
-            android:layout_width="match_parent"
+        <Button
+            android:onClick="onClickSearchWeb"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="mot de passe"
-            android:inputType="textPersonName" />
+            android:layout_weight="1"
+            android:text="search" />
+
     </LinearLayout>
 
     <WebView
+        android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    
+
 </LinearLayout>
