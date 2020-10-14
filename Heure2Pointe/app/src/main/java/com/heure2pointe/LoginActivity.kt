@@ -45,7 +45,5 @@ class LoginActivity : AppCompatActivity() {
 
         //Auto click Button
         webview.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()")
-
-        
     }
 }
