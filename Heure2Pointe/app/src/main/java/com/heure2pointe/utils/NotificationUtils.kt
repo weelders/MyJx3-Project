@@ -7,7 +7,7 @@ import android.os.Build
 import android.os.SystemClock
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.heure2pointe.MainActivity
+import com.heure2pointe.LoginActivity
 import com.heure2pointe.R
 
 const val CHANNEL_ID = "MonSuperChannel"
@@ -39,7 +39,7 @@ fun nuCreateInstantNotification(c: Context, message: String) {
     //Initialisation du chanel
     initChannel(c)
     //Ce qui se passera quand on cliquera sur la notif
-    val intent = Intent(c, MainActivity::class.java)
+    val intent = Intent(c, LoginActivity::class.java)
     val pi = PendingIntent.getActivity(c, 0, intent, PendingIntent.FLAG_ONE_SHOT)
     //La notification
     val nb = NotificationCompat.Builder(c, CHANNEL_ID)
@@ -65,7 +65,7 @@ fun nuScheduleNotification(c: Context, message: String, delay: Long) {
     builder.setContentText(message)
     builder.setSmallIcon(R.drawable.ic_warning)
     //Redirection vers le broadcast
-    val intent = Intent(c, MainActivity::class.java)
+    val intent = Intent(c, LoginActivity::class.java)
     intent.putExtra("MaCle", builder.build())
     val pendingIntent = PendingIntent.getBroadcast(
         c, 0, intent,
