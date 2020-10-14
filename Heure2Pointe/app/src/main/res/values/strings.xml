@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Heure2Pointe</string>
+    <string name="splash_title">C\'est l\'heure de pointe !</string>
 </resources>

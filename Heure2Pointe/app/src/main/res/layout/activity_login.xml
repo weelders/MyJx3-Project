@@ -7,16 +7,18 @@
     tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/tw_connexion"
+        android:id="@+id/tv_connexion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Connexion" />
+        android:text="Connexion"
+        android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/tw_2"
+        android:id="@+id/tv_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="On s'occupe de tout." />
+        android:text="On s'occupe de tout."
+        android:textSize="24sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Occitanie-occ.com" />
+            android:text="Occitanie-occ.com"
+            android:textSize="18sp" />
 
         <ProgressBar
             android:id="@+id/pb_1"
@@ -59,7 +62,14 @@
 
 
     <WebView
-        android:id="@+id/webview"
+        android:id="@+id/wv_Adel"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content">
+
+    </WebView>
+
+    <WebView
+        android:id="@+id/wv_Region"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

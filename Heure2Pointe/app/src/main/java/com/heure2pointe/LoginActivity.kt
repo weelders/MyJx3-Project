@@ -26,18 +26,15 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-
-
-
     }
 
     //WebView Configure and start connexion
     fun logScriptWV(wv: WebView, idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
-        wv.webViewClient = WebViewClient()
-        wv.settings.javaScriptEnabled = true
-        wv.loadUrl(urlAdel)
+        wv_Adel.webViewClient = WebViewClient()
+        wv_Adel.settings.javaScriptEnabled = true
+        wv_Adel.loadUrl(urlAdel)
+        wv_Adel.setWebViewClient(object : WebViewClient() {
 
-        wv.setWebViewClient(object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
                 view.loadUrl(url)
                 return true
@@ -50,14 +47,13 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
-
-
+    
     //Connexion automatique
     fun autoFillAndClick(idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
         //Auto-fill Text
-        webview.loadUrl("javascript:(function() { document.getElementById('$idUsername').value = '$username'; ;})()")
-        webview.loadUrl("javascript:(function() { document.getElementById('$idPassword').value = '$password'; ;})()")
+        wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idUsername').value = '$username'; ;})()")
+        wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idPassword').value = '$password'; ;})()")
         //Auto click Button
-        webview.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()")
+        wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()")
     }
 }
