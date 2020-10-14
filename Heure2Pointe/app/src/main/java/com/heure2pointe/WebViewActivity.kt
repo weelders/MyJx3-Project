@@ -1,47 +1,52 @@
 package com.heure2pointe
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_web_view.*
-import kotlin.concurrent.thread
+
+val urlAdel = "https://adel.adrar-formation.eu/login/index.php"
+
+val username = "bagnolati.th"
+val password = "6e8CEPp31v6h72Nb3RB2"
+
+val idUsername = "username"
+val idPassword = "password"
+val idButton = "loginbtn"
 
 class WebViewActivity : AppCompatActivity() {
-
-    var myThread: Thread? = null
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web_view)
 
-
         webview.webViewClient = WebViewClient()
         webview.settings.javaScriptEnabled = true
 
-    }
-
-    ///////////////////////////////////////////////////////////////////////////
-    // ONCLICK
-    ///////////////////////////////////////////////////////////////////////////
-
-    //onClick
-    fun onClickSearchWeb(view: View) {
-
-        val url = et_url.text.toString()
-
-        if (myThread == null || myThread?.state == Thread.State.TERMINATED) {
-            myThread = thread {
-                runOnUiThread {
-                    webview.loadUrl(url)
-                }
+        webview.loadUrl(urlAdel)
+        webview.setWebViewClient(object : WebViewClient() {
+            override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+                view.loadUrl(url)
+                return true
             }
-        } else {
-            Toast.makeText(this, "Chargement déjà en cours", Toast.LENGTH_SHORT).show()
-        }
 
-
+            override fun onPageFinished(view: WebView, url: String) {
+                autoFillAndClick(idUsername, idPassword, idButton, username, password)
+                //TODO Valider message
+            }
+        })
     }
+
+    fun autoFillAndClick(idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
+
+        //Auto-fill Text
+        webview.loadUrl("javascript:(function() { document.getElementById('$idUsername').value = '$username'; ;})()")
+        webview.loadUrl("javascript:(function() { document.getElementById('$idPassword').value = '$password'; ;})()")
+
+        //Auto click Button
+        webview.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()")
+
+        println("AUTOFILL")
+    }
+
 }
