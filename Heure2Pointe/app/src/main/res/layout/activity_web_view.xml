@@ -25,6 +25,7 @@
         android:hint="entre ton URL" />
 
         <Button
+            android:onClick="onClickSearchWeb"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -33,6 +34,7 @@
     </LinearLayout>
 
     <WebView
+        android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
