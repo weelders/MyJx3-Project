@@ -14,7 +14,7 @@
 
         <activity android:name=".IdAdelActivity"></activity>
         <activity android:name=".IdRegionActivity" />
-
+        <activity android:name=".SplashActivity"></activity>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
