@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tw_se_connecter_region"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Se connecter à la région" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tw_1region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1 : " />
+
+            <EditText
+                android:id="@+id/et_name_region"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Nom d'utilisateur" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tw_2region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 : " />
+
+            <EditText
+                android:id="@+id/et_pwd_region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tw_se_connecter_adel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Se connecter à l'adrar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tw_1adel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 : " />
+
+            <EditText
+                android:id="@+id/et_name_adel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Nom d'utilisateur" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tw_2adel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 : " />
+
+            <EditText
+                android:id="@+id/et_pwd_adel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotationY="21"
+        android:shadowColor="#2196F3"
+        android:text="Suivant"
+        android:textAlignment="center"
+        android:textColor="#FBFBFB"
+        android:textStyle="bold" />
+</LinearLayout>
