@@ -16,7 +16,8 @@
             android:id="@+id/tw_se_connecter_region"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Se connecter à la région" />
+            android:text="Se connecter à la région"
+            android:textSize="30sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -28,7 +29,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="1 : " />
+                android:text="1 : "
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/et_name_region"
@@ -49,7 +51,8 @@
                 android:id="@+id/tw_2region"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2 : " />
+                android:text="2 : "
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/et_pwd_region"
@@ -70,7 +73,8 @@
             android:id="@+id/tw_se_connecter_adel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Se connecter à l'adrar" />
+            android:text="Se connecter à l'adrar"
+            android:textSize="30sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,7 +85,8 @@
                 android:id="@+id/tw_1adel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1 : " />
+                android:text="1 : "
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/et_name_adel"
@@ -101,7 +106,8 @@
                 android:id="@+id/tw_2adel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2 : " />
+                android:text="2 : "
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/et_pwd_adel"
