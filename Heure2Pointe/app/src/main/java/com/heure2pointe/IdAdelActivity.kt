@@ -17,8 +17,13 @@ class IdAdelActivity : AppCompatActivity() {
         edt.putString("usernameRegion","")
         edt.putString("passwordRegion","")
 
+<<<<<<< HEAD
         edt.commit()
     }
     //TODO
     fun onClickBtnIdAdel(view: View) {}
 }
+=======
+
+
+>>>>>>> 7568b1083cb4486aa6a31bf44cf898a77bc43e17
