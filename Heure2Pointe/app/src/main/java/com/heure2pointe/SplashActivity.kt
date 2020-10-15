@@ -11,11 +11,10 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
     }
 
-    //Onclick -> enregistre les données et passe à la page suivante
-    fun onClick(view: View) {
+    //Onclick -> passe à la page suivante
+    fun onClickBtnStart(view: View) {
 
-        registData()
-        startActivity(Intent(this, LoginActivity::class.java))
+        startActivity(Intent(this, IdAdelActivity::class.java))
 
         finish()
     }
