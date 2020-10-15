@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_id_adel.*
 
+
 class IdAdelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,3 +40,4 @@ class IdAdelActivity : AppCompatActivity() {
         edt.apply()
     }
 }
+
