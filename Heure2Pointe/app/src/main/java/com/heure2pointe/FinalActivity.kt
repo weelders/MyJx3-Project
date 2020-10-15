@@ -2,6 +2,7 @@ package com.heure2pointe
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 class FinalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,4 +11,9 @@ class FinalActivity : AppCompatActivity() {
     }
 
 
+    ///////////////////////////////////////////////////////////////////////////
+    // ONCLICK
+    ///////////////////////////////////////////////////////////////////////////
+    fun onClickBtnFinish(view: View) {}
+    fun onClickBtnHistorique(view: View) {}
 }
