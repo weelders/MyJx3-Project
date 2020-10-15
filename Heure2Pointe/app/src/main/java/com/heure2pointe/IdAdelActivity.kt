@@ -8,4 +8,7 @@ class IdAdelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_id_adel)
     }
+
+
+
 }
