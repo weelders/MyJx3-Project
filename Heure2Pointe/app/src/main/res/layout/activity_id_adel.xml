@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Se connecter à l'adrar"
+            android:text="Se connecter à Adel.adrar-formation.eu"
             android:textSize="30sp" />
 
         <LinearLayout

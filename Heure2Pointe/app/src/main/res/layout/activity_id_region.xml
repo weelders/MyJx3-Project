@@ -44,13 +44,16 @@
             android:id="@+id/imageView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
             app:srcCompat="@drawable/groupe_10421" />
 
         <EditText
             android:id="@+id/et_pwd_region"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
             android:ems="10"
             android:inputType="textPassword" />
 
@@ -58,19 +61,23 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             app:srcCompat="@drawable/groupe_10420" />
 
         <EditText
             android:id="@+id/et_name_region"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
             android:ems="10"
             android:inputType="textPersonName" />
 
@@ -81,9 +88,10 @@
         android:layout_width="387dp"
         android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#C39BDC"
         android:text="Commencer"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#EDEDED"
         android:textColorHint="#5E5555" />
