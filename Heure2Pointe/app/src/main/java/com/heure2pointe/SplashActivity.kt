@@ -15,7 +15,8 @@ class SplashActivity : AppCompatActivity() {
     //Onclick -> passe à la page suivante
     fun onClickBtnStart(view: View) {
 
-        startActivity(Intent(this, IdRegionActivity::class.java))
+      startActivity(Intent(this, IdRegionActivity::class.java))
+
         finish()
     }
 }

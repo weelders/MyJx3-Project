@@ -1,5 +1,6 @@
 package com.heure2pointe
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,8 @@ class FinalActivity : AppCompatActivity() {
     ///////////////////////////////////////////////////////////////////////////
     // ONCLICK
     ///////////////////////////////////////////////////////////////////////////
-    fun onClickBtnFinish(view: View) {}
+    fun onClickBtnFinish(view: View) {
+        finish()
+    }
     fun onClickBtnHistorique(view: View) {}
 }
