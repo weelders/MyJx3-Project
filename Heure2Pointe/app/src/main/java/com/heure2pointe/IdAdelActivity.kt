@@ -1,10 +1,23 @@
 package com.heure2pointe
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_id_adel.*
+
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 2b3290cab27ed65ba49b19c242e56f5dce152775
+
+
+
+
+
+
+
 
 class IdAdelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,8 +30,9 @@ class IdAdelActivity : AppCompatActivity() {
     fun onClickBtnIdAdel(view: View) {
 
         registData()
-        startActivity(Intent(this,LoginActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
 
+        <<<<<<< HEAD
         finish()
     }
 
@@ -40,3 +54,8 @@ class IdAdelActivity : AppCompatActivity() {
         edt.apply()
     }
 }
+=======
+
+
+
+>>>>>>> 2b3290cab27ed65ba49b19c242e56f5dce152775
