@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
-        android:text="Pointe en seulement 2 clics pour ta formation !" />
+        android:text="Pointe en seulement 2 clics pour ta formation !"
+        android:textColor="#707070" />
 
     <ImageView
         android:id="@+id/imageView3"

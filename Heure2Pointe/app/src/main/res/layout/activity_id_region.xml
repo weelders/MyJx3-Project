@@ -34,6 +34,7 @@
         android:layout_marginLeft="10dp"
         android:gravity="center_horizontal"
         android:text="Se connecter à occitanie-occ.com"
+        android:textColor="#707070"
         android:textSize="24sp" />
 
     <FrameLayout
