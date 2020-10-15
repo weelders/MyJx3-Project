@@ -28,15 +28,15 @@
 
     </FrameLayout>
 
-        <TextView
-            android:id="@+id/tw_se_connecter_adel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_horizontal"
-            android:text="Se connecter à Adel.formation.eu"
-            android:textColor="#707070"
-            android:textSize="24sp" />
+    <TextView
+        android:id="@+id/tw_se_connecter_adel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_horizontal"
+        android:text="Se connecter à Adel.formation.eu"
+        android:textColor="#707070"
+        android:textSize="24sp" />
 
 
     <FrameLayout

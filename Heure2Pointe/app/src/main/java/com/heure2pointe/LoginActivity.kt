@@ -25,13 +25,21 @@ val passwordAdel = "your_password"
 val usernameRegion = "your_username"
 val passwordRegion = "your_password"
 
+val isAlreadyLog = false
+
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //Si utilisateur s'est déjà connecté
+        if(!isAlreadyLog)
+        {
+            val intent = Intent(this, SplashActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
         setContentView(R.layout.activity_login)
-
-
     }
     ///////////////////////////////////////////////////////////////////////////
     // MENU
