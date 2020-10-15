@@ -112,6 +112,7 @@
         android:layout_height="wrap_content" />
 
     <Button
+        android:onClick="onClickBtn"
         android:id="@+id/button2"
         android:layout_width="387dp"
         android:layout_height="60dp"
