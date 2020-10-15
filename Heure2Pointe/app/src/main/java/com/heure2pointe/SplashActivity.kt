@@ -11,8 +11,12 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
     }
 
-    fun onClickBtnSplash(view: View) {
-        startActivity(Intent(this, IdRegionActivity::class.java))
+
+    //Onclick -> passe à la page suivante
+    fun onClickBtnStart(view: View) {
+
+      startActivity(Intent(this, IdRegionActivity::class.java))
+
         finish()
     }
 
