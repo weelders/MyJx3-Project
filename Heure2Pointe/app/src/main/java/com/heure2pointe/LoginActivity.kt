@@ -6,9 +6,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlin.concurrent.thread
 
 const val MENU_PREFERENCES = 50
 
@@ -21,7 +21,7 @@ const val idButtonAdel = "loginbtn"
 
 const val idUsernameRegion = "inputUsername"
 const val idPasswordRegion = "inputPassword"
-const val idButtonRegion = "btn btn-default"
+const val idButtonRegion = "btn"
 
 
 class LoginActivity : AppCompatActivity() {
@@ -46,19 +46,16 @@ class LoginActivity : AppCompatActivity() {
 
 
         //Connexion Region
-        thread {
-            runOnUiThread { logScriptWV(wv_Region, urlRegion, idUsernameRegion, idPasswordRegion, idButtonRegion, usernameRegion, passwordRegion) }
-
-        }
+        logScriptWV(wv_Region, urlRegion, idUsernameRegion, idPasswordRegion, idButtonRegion, usernameRegion, passwordRegion)
 
         //Connexion Adel
         logScriptWV(wv_Adel, urlAdel, idUsernameAdel, idPasswordAdel, idButtonAdel, usernameAdel, passwordAdel)
 
     }
 
-    ///////////////////////////////////////////////////////////////////////////
-    // MENU
-    ///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// MENU
+///////////////////////////////////////////////////////////////////////////
 
     //Remplir le menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -80,9 +77,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     ///////////////////////////////////////////////////////////////////////////
-    // WebView Script
-    ///////////////////////////////////////////////////////////////////////////
-    //WebView Configure and start connexion
+// WebView Script
+///////////////////////////////////////////////////////////////////////////
+//WebView Configure and start connexion
     fun logScriptWV(wv: WebView, url: String, idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
         wv.webViewClient = WebViewClient()
         wv.settings.javaScriptEnabled = true
@@ -103,18 +100,24 @@ class LoginActivity : AppCompatActivity() {
         //Auto click Button
         wv.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()") //For Adel
         //TODO faire le click sur l'élément button de la région
-        wv.loadUrl("javascript:(function() { document.getElementById('form_connexion form_required').getElementsByClassName('btn')[0].click(); })()") //For Region
+
+        wv.loadUrl("javascript:(function() { document.getElementsByClassName('btn')[0].click(); })()") //For Region
     }
 
 
     ///////////////////////////////////////////////////////////////////////////
-    // FUN Utils
-    ///////////////////////////////////////////////////////////////////////////
-    //Vérifie si c'est la premiere connexion de l'utilisateur
+// FUN Utils
+///////////////////////////////////////////////////////////////////////////
+//Vérifie si c'est la premiere connexion de l'utilisateur
     fun isAlreadyLog(): Boolean {
         val gsp = getSharedPreferences("dataLogs", 0)
         val isAlreadyLog = gsp.getBoolean("isAlreadyLog", false)
 
         return isAlreadyLog
+    }
+
+
+    fun onFinishScript() {
+
     }
 }

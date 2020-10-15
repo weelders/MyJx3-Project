@@ -15,4 +15,6 @@ class SplashActivity : AppCompatActivity() {
         startActivity(Intent(this, IdRegionActivity::class.java))
         finish()
     }
+
+
 }
