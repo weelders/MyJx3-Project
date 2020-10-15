@@ -34,12 +34,10 @@ class LoginActivity : AppCompatActivity() {
         wv_Adel.settings.javaScriptEnabled = true
         wv_Adel.loadUrl(urlAdel)
         wv_Adel.setWebViewClient(object : WebViewClient() {
-
             override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
                 view.loadUrl(url)
                 return true
             }
-
             override fun onPageFinished(view: WebView, url: String) {
                 autoFillAndClick(idUsername, idPassword, idButton, username, password)
                 //TODO gérer les status & erreurs
