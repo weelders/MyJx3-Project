@@ -87,6 +87,7 @@
     </FrameLayout>
 
     <Button
+        android:onClick="onClickBtnIdRegion"
         android:id="@+id/bt_next_region"
         android:layout_width="387dp"
         android:layout_height="60dp"
