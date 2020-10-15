@@ -84,6 +84,7 @@
         android:layout_marginTop="75dp"
         android:backgroundTint="#C39BDC"
         android:text="Commencer"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#EDEDED"
         android:textColorHint="#5E5555" />
