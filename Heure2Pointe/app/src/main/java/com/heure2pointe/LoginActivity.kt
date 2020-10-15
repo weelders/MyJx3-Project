@@ -6,7 +6,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -99,8 +98,6 @@ class LoginActivity : AppCompatActivity() {
         wv.loadUrl("javascript:(function() { document.getElementById('$idPassword').value = '$password'; ;})()")
         //Auto click Button
         wv.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()") //For Adel
-        //TODO faire le click sur l'élément button de la région
-
         wv.loadUrl("javascript:(function() { document.getElementsByClassName('btn')[0].click(); })()") //For Region
     }
 

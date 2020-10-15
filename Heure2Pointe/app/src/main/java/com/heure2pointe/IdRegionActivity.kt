@@ -1,10 +1,9 @@
 package com.heure2pointe
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import kotlinx.android.synthetic.main.activity_id_adel.*
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_id_region.*
 
 class IdRegionActivity : AppCompatActivity() {
