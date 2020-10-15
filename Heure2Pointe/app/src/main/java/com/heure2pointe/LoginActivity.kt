@@ -26,13 +26,25 @@ val usernameRegion = "your_username"
 val passwordRegion = "your_password"
 
 
+
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        //Si c'est la première connexion de la part de l'utilisateur
+        if(!isAlreadyLog())
+        {
+            val intent = Intent(this, SplashActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
 
+
+
+
     }
+
     ///////////////////////////////////////////////////////////////////////////
     // MENU
     ///////////////////////////////////////////////////////////////////////////
@@ -55,7 +67,6 @@ class LoginActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
 
     //WebView Configure and start connexion
     fun logScriptWV(wv: WebView, idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
@@ -83,5 +94,13 @@ class LoginActivity : AppCompatActivity() {
         wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idPassword').value = '$password'; ;})()")
         //Auto click Button
         wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()")
+    }
+
+    //Vérifie si c'est la premiere connexion de l'utilisateur
+    fun isAlreadyLog(): Boolean {
+        val gsp = getSharedPreferences("dataLogs", 0)
+        val isAlreadyLog = gsp.getBoolean("isAlreadyLog", false)
+
+        return isAlreadyLog
     }
 }
