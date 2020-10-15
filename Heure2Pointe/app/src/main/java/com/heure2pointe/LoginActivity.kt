@@ -19,7 +19,6 @@ const val idUsernameAdel = "username"
 const val idPasswordAdel = "password"
 const val idButtonAdel = "loginbtn"
 
-
 val usernameAdel = "your_username"
 val passwordAdel = "your_password"
 
@@ -49,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            //Préférences, donne sur
+            //Load activity
             MENU_PREFERENCES -> {
                 startActivity(Intent(this, IdRegionActivity::class.java))
             }
