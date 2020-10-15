@@ -15,6 +15,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="600px"
+            android:layout_marginTop="50dp"
             android:scaleType="center"
             android:scaleX="1.2"
             android:scaleY="1.2"
@@ -25,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="150dp"
             android:layout_marginBottom="10dp"
             android:gravity="center_horizontal"
             android:includeFontPadding="false"
@@ -39,12 +40,13 @@
         android:id="@+id/tv_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:paddingLeft="5dp"
+        android:layout_gravity="center|center_horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
         android:paddingTop="10dp"
         android:text="Veuillez patienter on s'occupe de tout"
         android:textColor="#707070"
-        android:textSize="24sp" />
+        android:textSize="22sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -111,6 +113,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+
     <Button
         android:id="@+id/button2"
         android:layout_width="387dp"
@@ -121,4 +124,5 @@
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
+
 </LinearLayout>

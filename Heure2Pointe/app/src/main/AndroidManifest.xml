@@ -23,9 +23,9 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".outilsandroid.NotificationReceiver"
-            android:enabled="true" />
+<!--        <receiver-->
+<!--            android:name=".outilsandroid.NotificationReceiver"-->
+<!--            android:enabled="true" />-->
     </application>
 
 </manifest>
