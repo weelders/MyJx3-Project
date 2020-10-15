@@ -1,7 +1,7 @@
 package com.heure2pointe
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
 class IdAdelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
