@@ -42,6 +42,7 @@
         android:backgroundTint="#C39BDC"
         android:text="Terminer"
         android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
     <Button
@@ -53,6 +54,7 @@
         android:backgroundTint="#9BA5DA"
         android:text="Relevé de pointage"
         android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
 </LinearLayout>
