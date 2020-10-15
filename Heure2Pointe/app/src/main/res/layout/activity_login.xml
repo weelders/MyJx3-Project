@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <TextView
@@ -113,16 +113,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="387dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#C39BDC"
-        android:text="Terminer"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp" />
 
 </LinearLayout>
