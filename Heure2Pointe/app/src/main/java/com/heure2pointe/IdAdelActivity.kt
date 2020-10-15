@@ -39,4 +39,5 @@ class IdAdelActivity : AppCompatActivity() {
         //Apply
         edt.apply()
     }
+}
 
