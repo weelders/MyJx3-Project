@@ -87,6 +87,7 @@
 
 
     <Button
+        android:onClick="onClickBtnIdAdel"
         android:id="@+id/bt_next_adel"
         android:layout_width="387dp"
         android:layout_height="60dp"
