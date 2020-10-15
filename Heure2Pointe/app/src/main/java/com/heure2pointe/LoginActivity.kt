@@ -25,22 +25,26 @@ val passwordAdel = "your_password"
 val usernameRegion = "your_username"
 val passwordRegion = "your_password"
 
-val isAlreadyLog = false
 
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        //Si utilisateur s'est déjà connecté
-        if(!isAlreadyLog)
+        //Si c'est la première connexion de la part de l'utilisateur
+        if(!isAlreadyLog())
         {
             val intent = Intent(this, SplashActivity::class.java)
             startActivity(intent)
             finish()
         }
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
+
+
+
     }
+
     ///////////////////////////////////////////////////////////////////////////
     // MENU
     ///////////////////////////////////////////////////////////////////////////
@@ -90,5 +94,13 @@ class LoginActivity : AppCompatActivity() {
         wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idPassword').value = '$password'; ;})()")
         //Auto click Button
         wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()")
+    }
+
+    //Vérifie si c'est la premiere connexion de l'utilisateur
+    fun isAlreadyLog(): Boolean {
+        val gsp = getSharedPreferences("dataLogs", 0)
+        val isAlreadyLog = gsp.getBoolean("isAlreadyLog", false)
+
+        return isAlreadyLog
     }
 }

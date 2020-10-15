@@ -33,7 +33,7 @@ class IdAdelActivity : AppCompatActivity() {
         //Enregistre les données
         edt.putString("usernameAdel", nameAdel)
         edt.putString("passwordAdel", pswAdel)
-        edt.putBoolean("isAlredyLog", true)
+        edt.putBoolean("isAlreadyLog", true)
 
         //Apply
         edt.apply()
