@@ -8,18 +8,10 @@ import kotlinx.android.synthetic.main.activity_id_adel.*
 
 
 
-
-
-
-
-
-
-
 class IdAdelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_id_adel)
-
     }
 
     //Onclick -> enregistre les données et passe à la page suivante
@@ -43,7 +35,7 @@ class IdAdelActivity : AppCompatActivity() {
         //Enregistre les données
         edt.putString("usernameAdel", nameAdel)
         edt.putString("passwordAdel", pswAdel)
-        edt.putBoolean("isAlredyLog", true)
+        edt.putBoolean("isAlreadyLog", true)
 
         //Apply
         edt.apply()

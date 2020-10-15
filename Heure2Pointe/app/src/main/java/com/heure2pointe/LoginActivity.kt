@@ -6,9 +6,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlin.concurrent.thread
 
 const val MENU_PREFERENCES = 50
 
@@ -19,28 +19,43 @@ const val idUsernameAdel = "username"
 const val idPasswordAdel = "password"
 const val idButtonAdel = "loginbtn"
 
-val usernameAdel = "your_username"
-val passwordAdel = "your_password"
-
-val usernameRegion = "your_username"
-val passwordRegion = "your_password"
-
-val isAlreadyLog = false
+const val idUsernameRegion = "inputUsername"
+const val idPasswordRegion = "inputPassword"
+const val idButtonRegion = "btn btn-default"
 
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        //Si utilisateur s'est déjà connecté
-        if(!isAlreadyLog)
-        {
+        //Si c'est la première connexion de la part de l'utilisateur
+        if (!isAlreadyLog()) {
             val intent = Intent(this, SplashActivity::class.java)
             startActivity(intent)
             finish()
         }
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
+        //DATA
+        val gsp = getSharedPreferences("dataLogs", 0)
+        val usernameAdel = gsp.getString("usernameAdel", "NA")!!
+        val passwordAdel = gsp.getString("passwordAdel", "NA")!!
+
+        val usernameRegion = gsp.getString("usernameRegion", "NA")!!
+        val passwordRegion = gsp.getString("passwordRegion", "NA")!!
+
+
+        //Connexion Region
+        thread {
+            runOnUiThread { logScriptWV(wv_Region, urlRegion, idUsernameRegion, idPasswordRegion, idButtonRegion, usernameRegion, passwordRegion) }
+
+        }
+
+        //Connexion Adel
+        logScriptWV(wv_Adel, urlAdel, idUsernameAdel, idPasswordAdel, idButtonAdel, usernameAdel, passwordAdel)
+
     }
+
     ///////////////////////////////////////////////////////////////////////////
     // MENU
     ///////////////////////////////////////////////////////////////////////////
@@ -64,32 +79,42 @@ class LoginActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-
+    ///////////////////////////////////////////////////////////////////////////
+    // WebView Script
+    ///////////////////////////////////////////////////////////////////////////
     //WebView Configure and start connexion
-    fun logScriptWV(wv: WebView, idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
-        wv_Adel.webViewClient = WebViewClient()
-        wv_Adel.settings.javaScriptEnabled = true
-        wv_Adel.loadUrl(urlAdel)
-        wv_Adel.setWebViewClient(object : WebViewClient() {
-            override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
-                view.loadUrl(url)
-                return true
-            }
-
+    fun logScriptWV(wv: WebView, url: String, idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
+        wv.webViewClient = WebViewClient()
+        wv.settings.javaScriptEnabled = true
+        wv.loadUrl(url)
+        wv.setWebViewClient(object : WebViewClient() {
             override fun onPageFinished(view: WebView, url: String) {
-                autoFillAndClick(idUsername, idPassword, idButton, username, password)
+                autoFillAndClick(wv, idUsername, idPassword, idButton, username, password)
                 //TODO gérer les status & erreurs
-                Toast.makeText(view.context, "Log ?", Toast.LENGTH_SHORT).show()
             }
         })
     }
 
     //Connexion automatique
-    fun autoFillAndClick(idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
+    fun autoFillAndClick(wv: WebView, idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
         //Auto-fill Text
-        wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idUsername').value = '$username'; ;})()")
-        wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idPassword').value = '$password'; ;})()")
+        wv.loadUrl("javascript:(function() { document.getElementById('$idUsername').value = '$username'; ;})()")
+        wv.loadUrl("javascript:(function() { document.getElementById('$idPassword').value = '$password'; ;})()")
         //Auto click Button
-        wv_Adel.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()")
+        wv.loadUrl("javascript:(function() { document.getElementById('$idButton').click(); })()") //For Adel
+        //TODO faire le click sur l'élément button de la région
+        wv.loadUrl("javascript:(function() { document.getElementById('form_connexion form_required').getElementsByClassName('btn')[0].click(); })()") //For Region
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    // FUN Utils
+    ///////////////////////////////////////////////////////////////////////////
+    //Vérifie si c'est la premiere connexion de l'utilisateur
+    fun isAlreadyLog(): Boolean {
+        val gsp = getSharedPreferences("dataLogs", 0)
+        val isAlreadyLog = gsp.getBoolean("isAlreadyLog", false)
+
+        return isAlreadyLog
     }
 }
