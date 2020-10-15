@@ -56,7 +56,6 @@ class LoginActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-
     //WebView Configure and start connexion
     fun logScriptWV(wv: WebView, idUsername: String, idPassword: String, idButton: String, username: String, password: String) {
         wv_Adel.webViewClient = WebViewClient()
