@@ -99,7 +99,7 @@
         android:layout_marginTop="40dp"
         android:backgroundTint="#C39BDC"
         android:text="Commencer"
-        android:onClick="onBtClick"
+        android:onClick="onBtNextAdelClick"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#EDEDED"
