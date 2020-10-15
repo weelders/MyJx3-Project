@@ -9,9 +9,7 @@ class IdAdelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_id_adel)
 
-
-
-        
+        //TODO
         val sp = getSharedPreferences("dataLogs", 0)
 
         val edt = sp.edit()
@@ -21,6 +19,6 @@ class IdAdelActivity : AppCompatActivity() {
 
         edt.commit()
     }
-
+    //TODO
     fun onClickBtnIdAdel(view: View) {}
 }
