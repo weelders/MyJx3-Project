@@ -33,7 +33,6 @@
         app:srcCompat="@drawable/logo_combin_" />
 
     <Button
-        android:onClick="onClickBtnSplash"
         android:id="@+id/bt_commencer"
         android:onClick="onClickBtnStart"
         android:layout_width="384dp"
