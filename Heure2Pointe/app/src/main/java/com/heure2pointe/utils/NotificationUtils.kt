@@ -9,6 +9,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.heure2pointe.LoginActivity
 import com.heure2pointe.R
+import com.heure2pointe.outilsandroid.NotificationReceiver
 
 const val CHANNEL_ID = "MonSuperChannel"
 const val CHANNEL_NAME = "Commandes"
@@ -78,4 +79,24 @@ fun nuScheduleNotification(c: Context, message: String, delay: Long) {
         AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis,
         pendingIntent
     )
+}
+
+fun scheduleNotification(context:Context, time:Long, title:String, text:String) {
+    val intent = Intent(context, NotificationReceiver::class.java)
+    intent.putExtra("title", title)
+    intent.putExtra("text", text)
+    val pending = PendingIntent.getBroadcast(context, 42, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+    // Schdedule notification
+    val manager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+    manager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, time, pending)
+}
+
+fun cancelNotification(context:Context, title:String, text:String) {
+    val intent = Intent(context, NotificationReceiver::class.java)
+    intent.putExtra("title", title)
+    intent.putExtra("text", text)
+    val pending = PendingIntent.getBroadcast(context, 42, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+    // Cancel notification
+    val manager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+    manager.cancel(pending)
 }

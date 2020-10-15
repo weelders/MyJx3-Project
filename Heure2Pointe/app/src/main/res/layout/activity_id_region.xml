@@ -12,13 +12,13 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_region"
             android:layout_width="match_parent"
             android:layout_height="252dp"
             app:srcCompat="@drawable/abstract_modern_gradient_vivid_color_geometric_shape_of_elements_vector" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_etape1"
             android:layout_width="match_parent"
             android:layout_height="241dp"
             android:gravity="center_horizontal|center_vertical"

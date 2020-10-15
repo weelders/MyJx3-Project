@@ -7,11 +7,32 @@
     android:orientation="vertical"
     tools:context=".IdAdelActivity">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_adel"
+            android:layout_width="match_parent"
+            android:layout_height="252dp"
+            app:srcCompat="@drawable/abstract_modern_gradient_vivid_color_geometric_shape_of_elements_vector" />
+
+        <TextView
+            android:id="@+id/tv_etape2"
+            android:layout_width="match_parent"
+            android:layout_height="241dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Etape 2."
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+    </FrameLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <TextView
@@ -73,13 +94,13 @@
 
     <Button
         android:id="@+id/bt_next_adel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:rotationY="21"
-        android:shadowColor="#2196F3"
-        android:text="Suivant"
-        android:textAlignment="center"
-        android:textColor="#FBFBFB"
-        android:textStyle="bold" />
+        android:layout_width="387dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="75dp"
+        android:backgroundTint="#C39BDC"
+        android:text="Commencer"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#EDEDED"
+        android:textColorHint="#5E5555" />
 </LinearLayout>
