@@ -6,11 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_id_adel.*
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 2b3290cab27ed65ba49b19c242e56f5dce152775
 
 
 
@@ -32,7 +28,6 @@ class IdAdelActivity : AppCompatActivity() {
         registData()
         startActivity(Intent(this, LoginActivity::class.java))
 
-        <<<<<<< HEAD
         finish()
     }
 
@@ -54,8 +49,4 @@ class IdAdelActivity : AppCompatActivity() {
         edt.apply()
     }
 }
-=======
 
-
-
->>>>>>> 2b3290cab27ed65ba49b19c242e56f5dce152775
